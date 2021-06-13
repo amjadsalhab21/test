@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+All my posts
+{%endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "blog/blog-detail.css" %}" >
+
+{% endblock %}
+{%block contnet%}
+<section id ="summary">
+    <h2>Post title</h2>
+    <article>
+        <img style="width: 250px; height: 250px;" src="{% static "blog/imgs/"|add:post.img %}">
+        <address>By Amjad</address>
+        <div>Last update on <time>{{post.date|date:" d m Y"}}</time></div>
+    </article>
+</section>
+<main>
+    <p>
+        {{post.content}}
+    </p>
+    <p>
+        {{post.content}}
+    </p>
+</main>
+{% endblock %}
